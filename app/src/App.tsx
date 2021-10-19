@@ -1,16 +1,20 @@
 import React from 'react'
 import { 
-	View,
-	Text
+	View
 } from 'react-native'
 
+import { NativeBaseProvider } from 'native-base';
+
 import AppStyles from './App.scss'
+import Login from './pages/login'
 
 const App = () => {
 	return (
-		<View style={AppStyles.container}>
-			<Text>Hello World!</Text>
-		</View>
+		<NativeBaseProvider>
+			<View>
+				<Login />
+			</View>
+	  </NativeBaseProvider>
 	);
 }
 
