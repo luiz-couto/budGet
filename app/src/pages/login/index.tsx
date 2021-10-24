@@ -1,5 +1,6 @@
 import React from 'react'
-import { View } from 'react-native'
+import { View, Text } from 'react-native'
+import Icon from 'react-native-vector-icons/MaterialIcons';
 
 import styles from './styles.scss'
 
@@ -11,7 +12,9 @@ const Login = () => {
 			</View>
 
 			<View style={styles.sign_in_container}>
-				
+				<Icon name={"expand-more"} size={45} color="#900" />
+				<Text>SIGN IN</Text>
+
 			</View>
 		</View>
 	);
