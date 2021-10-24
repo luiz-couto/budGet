@@ -13,7 +13,7 @@ const Login = () => {
 
 			<View style={styles.sign_in_container}>
 				<Icon name={"expand-more"} size={45} color="#900" />
-				<Text>SIGN IN</Text>
+				<Text style={styles.sign_in_text}>SIGN IN</Text>
 
 			</View>
 		</View>
