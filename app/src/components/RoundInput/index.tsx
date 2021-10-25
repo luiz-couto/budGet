@@ -9,7 +9,7 @@ import styles from './styles.scss';
 interface propsType {
   icon: JSX.Element,
   placeholder: string,
-  size?: number
+  size?: number,
   password?: boolean
 }
 
@@ -23,7 +23,7 @@ const RoundInput = (props: propsType) => {
         secureTextEntry={props.password ? true : false}
       />
 		</View>
-  );  
+  );
 }
 
 export default RoundInput;

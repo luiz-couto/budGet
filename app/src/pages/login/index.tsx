@@ -1,5 +1,5 @@
 import React from 'react'
-import { View, Text } from 'react-native'
+import { View, Text, Image, Keyboard } from 'react-native'
 import Icon from 'react-native-vector-icons/Feather';
 
 import RoundInput from '../../components/RoundInput';
@@ -10,7 +10,8 @@ const Login = () => {
 	return (
 		<View style={styles.container}>
 			<View style={styles.logo_container}>
-
+				<Image resizeMode={'contain'} style={styles.piggy_icon} source={require('../../../assets/images/piggy.png')} />
+				<Text style={styles.app_name_text} >budGet</Text>
 			</View>
 
 			<View style={styles.sign_in_container}>
