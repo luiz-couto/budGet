@@ -1,0 +1,15 @@
+@import '../../styles/global';
+
+.text_input_box {
+    background-color: $white;
+    border-radius: 35px;
+    flex-direction: row;
+    padding: 7px 15px 7px 15px;
+}
+
+.text_input {
+    font-family: 'Ruda';
+    font-size: 18px;
+    color: $font_black;
+    width: 90%;
+}

@@ -12,8 +12,9 @@
 
 .sign_in_container {
     background-color: $primary_color;
-    padding: 5px;
+    padding: 20px;
     height: 100%;
+    padding-top: 15%;
 }
 
 .sign_in_text_box {
@@ -25,3 +26,19 @@
     font-size: 25;
     color: #fff;
 }
+
+.email_input_box {
+    padding-top: 20%;
+}
+
+.password_input_box {
+    padding-top: 10px;
+}
+
+.user_icon {
+    color: rgba($color: #000000, $alpha: 0.2);
+    padding-top: 9px;
+    padding-left: 5px;
+    width: 10%;
+}
+
