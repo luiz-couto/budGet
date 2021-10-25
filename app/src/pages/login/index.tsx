@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState, useEffect } from 'react'
 import { View, Text, Image, Keyboard } from 'react-native'
 import Icon from 'react-native-vector-icons/Feather';
 
@@ -7,11 +7,38 @@ import RoundInput from '../../components/RoundInput';
 import styles from './styles.scss'
 
 const Login = () => {
+
+	const [isKeyboardVisible, setKeyboardVisible] = useState(false);
+
+ 	useEffect(() => {
+    const keyboardDidShowListener = Keyboard.addListener(
+      'keyboardDidShow',
+      () => {
+        setKeyboardVisible(true);
+      }
+    );
+    const keyboardDidHideListener = Keyboard.addListener(
+      'keyboardDidHide',
+      () => {
+        setKeyboardVisible(false);
+      }
+    );
+
+    return () => {
+      keyboardDidHideListener.remove();
+      keyboardDidShowListener.remove();
+    };
+  }, []);
+
+
 	return (
 		<View style={styles.container}>
 			<View style={styles.logo_container}>
 				<Image resizeMode={'contain'} style={styles.piggy_icon} source={require('../../../assets/images/piggy.png')} />
-				<Text style={styles.app_name_text} >budGet</Text>
+				{
+					!isKeyboardVisible && 
+					<Text style={styles.app_name_text}>budGet</Text>
+				}
 			</View>
 
 			<View style={styles.sign_in_container}>
