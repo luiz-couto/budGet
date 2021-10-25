@@ -15,7 +15,7 @@ interface propsType {
 
 const RoundInput = (props: propsType) => {
   return (
-    <View style={styles.text_input_box}>
+    <View style={{ ...styles.text_input_box, elevation: 4 }}>
       {props.icon}
       <TextInput
         style={styles.text_input}
