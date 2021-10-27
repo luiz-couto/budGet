@@ -3,6 +3,7 @@ import { View, Text, Image, Keyboard } from 'react-native'
 import Icon from 'react-native-vector-icons/Feather';
 
 import RoundInput from '../../components/RoundInput';
+import RoundButton from '../../components/RoundButton';
 
 import styles from './styles.scss'
 
@@ -60,6 +61,10 @@ const Login = () => {
 						placeholder='Password'
 						password={true}
 					/>
+				</View>
+
+				<View style={styles.button_container}>
+					<RoundButton text={'LOGIN'}/>
 				</View>
 
 
