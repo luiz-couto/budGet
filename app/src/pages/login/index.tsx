@@ -64,7 +64,10 @@ const Login = () => {
 				</View>
 
 				<View style={styles.button_container}>
-					<RoundButton text={'LOGIN'}/>
+					<RoundButton 
+						text={'LOGIN'}
+						onClick={() => { console.log('login button clicked') }}
+					/>
 				</View>
 
 

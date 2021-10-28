@@ -12,6 +12,7 @@ const PRESSED_OPACITY = 0.3
 
 interface propsType {
   text: string
+  onClick: () => void
 }
 
 const RoundButton = (props: propsType) => {
@@ -25,6 +26,7 @@ const RoundButton = (props: propsType) => {
       }}
       onPressOut={() => {
         setOpacity(FULL_OPACITY)
+        props.onClick()
       }}
     >
       <View style={{ ...styles.button_box, elevation: 7, opacity: opacity }}>
