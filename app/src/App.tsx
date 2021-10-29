@@ -7,7 +7,9 @@ import {
 import { NativeBaseProvider } from 'native-base'
 
 import AppStyles from './App.scss'
+
 import Login from './pages/login'
+import Expenses from './pages/expenses'
 
 /*
 It seens that native base has a cycle in its dependencies, creating a warning.
@@ -21,7 +23,7 @@ const App = () => {
 	return (
 		<NativeBaseProvider>
 			<View>
-				<Login />
+				<Expenses />
 			</View>
 	  </NativeBaseProvider>
 	);
