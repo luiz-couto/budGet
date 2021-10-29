@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react'
-import { View, Text, Image, Keyboard } from 'react-native'
+import { View, Text, Image, Keyboard, ScrollView } from 'react-native'
 import Icon from 'react-native-vector-icons/Feather';
 import { Divider } from 'native-base';
 
@@ -43,54 +43,55 @@ const Login = () => {
 					<Text style={styles.app_name_text}>budGet</Text>
 				}
 			</View>
-
 			<View style={styles.sign_in_container}>
-				{/* <Icon name={"expand-more"} size={45} color="#900" /> */}
-				<View style={styles.sign_in_text_box}>
-					<Text style={styles.sign_in_text}>SIGN IN</Text>
-				</View>
-				
-				<View style={styles.email_input_box}>
-					<RoundInput 
-						icon= { <Icon style={styles.user_icon} name={"user"} size={25} /> }
-						placeholder='Email'
-					/>
-				</View>
-
-				<View style={styles.password_input_box}>
-					<RoundInput 
-						icon= { <Icon style={styles.user_icon} name={"lock"} size={25} /> }
-						placeholder='Password'
-						password={true}
-					/>
-				</View>
-
-				<View style={styles.button_container}>
-					<RoundButton 
-						text={'LOGIN'}
-						onClick={() => { console.log('login button clicked') }}
-					/>
-				</View>
-				
-				<View style={styles.footer_box}>
-					<PressableOpacity
-						onClick={() => {console.log('forgot password button clicked')}}
-					>
-						<View style={styles.footer_text_box}>
-							<Text style={styles.footer_text}>Forgot Password</Text>
-						</View>
-					</PressableOpacity>
+				<ScrollView>
+					<View style={styles.sign_in_text_box}>
+						<Text style={styles.sign_in_text}>SIGN IN</Text>
+					</View>
 					
-					<Divider orientation={'vertical'}/>
+					<View style={styles.email_input_box}>
+						<RoundInput 
+							icon= { <Icon style={styles.user_icon} name={"user"} size={25} /> }
+							placeholder='Email'
+						/>
+					</View>
+
+					<View style={styles.password_input_box}>
+						<RoundInput 
+							icon= { <Icon style={styles.user_icon} name={"lock"} size={25} /> }
+							placeholder='Password'
+							password={true}
+						/>
+					</View>
+
+					<View style={styles.button_container}>
+						<RoundButton 
+							text={'LOGIN'}
+							onClick={() => { console.log('login button clicked') }}
+						/>
+					</View>
 					
-					<PressableOpacity
-						onClick={() => {console.log('register button clicked')}}
-					>
-						<View style={styles.footer_text_box}>
-							<Text style={styles.footer_text}>Register</Text>
-						</View>
-					</PressableOpacity>
-				</View>
+					<View style={styles.footer_box}>
+						<PressableOpacity
+							onClick={() => {console.log('forgot password button clicked')}}
+						>
+							<View style={styles.footer_text_box}>
+								<Text style={styles.footer_text}>Forgot Password</Text>
+							</View>
+						</PressableOpacity>
+						
+						<Divider orientation={'vertical'}/>
+						
+						<PressableOpacity
+							onClick={() => {console.log('register button clicked')}}
+						>
+							<View style={styles.footer_text_box}>
+								<Text style={styles.footer_text}>Register</Text>
+							</View>
+						</PressableOpacity>
+					</View>
+				</ScrollView>
+				
 
 			</View>
 		</View>

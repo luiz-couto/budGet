@@ -27,12 +27,14 @@
     background-color: $primary_color;
     padding: 20px;
     height: 100%;
-    padding-top: 15%;
+    padding-top: 0%;
     padding-left: 30px;
     padding-right: 30px;
+    flex: 1;
 }
 
 .sign_in_text_box {
+    padding-top: 15%;
     align-items: center;
 }
 
