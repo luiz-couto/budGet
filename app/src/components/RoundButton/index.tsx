@@ -1,14 +1,12 @@
-import React, { useState } from 'react'
+import React from 'react'
 import {
   View,
-  Text,
-  Pressable
+  Text
 } from 'react-native'
 
 import styles from './styles.scss';
 
-const FULL_OPACITY = 1
-const PRESSED_OPACITY = 0.3
+import PressableOpacity from '../PressableOpacity';
 
 interface propsType {
   text: string
@@ -16,23 +14,14 @@ interface propsType {
 }
 
 const RoundButton = (props: propsType) => {
-
-  const [opacity, setOpacity] = useState(FULL_OPACITY);
-
   return (
-    <Pressable
-      onPressIn={() => {
-        setOpacity(PRESSED_OPACITY)
-      }}
-      onPressOut={() => {
-        setOpacity(FULL_OPACITY)
-        props.onClick()
-      }}
+    <PressableOpacity
+      onClick={props.onClick}
     >
-      <View style={{ ...styles.button_box, elevation: 7, opacity: opacity }}>
+      <View style={{ ...styles.button_box, elevation: 7 }}>
         <Text style={styles.button_text}>{props.text}</Text>
       </View>
-    </Pressable>
+    </PressableOpacity>
   );
 }
 

@@ -5,6 +5,7 @@ import { Divider } from 'native-base';
 
 import RoundInput from '../../components/RoundInput';
 import RoundButton from '../../components/RoundButton';
+import PressableOpacity from '../../components/PressableOpacity';
 
 import styles from './styles.scss'
 
@@ -72,13 +73,23 @@ const Login = () => {
 				</View>
 				
 				<View style={styles.footer_box}>
-					<View style={styles.footer_text_box}>
-						<Text style={styles.footer_text}>Forgot Password</Text>
-					</View>
+					<PressableOpacity
+						onClick={() => {console.log('forgot password button clicked')}}
+					>
+						<View style={styles.footer_text_box}>
+							<Text style={styles.footer_text}>Forgot Password</Text>
+						</View>
+					</PressableOpacity>
+					
 					<Divider orientation={'vertical'}/>
-					<View style={styles.footer_text_box}>
-						<Text style={styles.footer_text}>Register</Text>
-					</View>
+					
+					<PressableOpacity
+						onClick={() => {console.log('register button clicked')}}
+					>
+						<View style={styles.footer_text_box}>
+							<Text style={styles.footer_text}>Register</Text>
+						</View>
+					</PressableOpacity>
 				</View>
 
 			</View>
