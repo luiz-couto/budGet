@@ -1,0 +1,25 @@
+@import '../../styles/global';
+
+.header_box {
+    flex-direction: row;
+    justify-content: space-between;
+    height: 70px;
+}
+
+.header_title_box {
+    color: $font_placeholder;
+    width: 60%;
+    align-items: center;
+    justify-content: center;
+}
+
+.header_title {
+    font-family: 'Ruda';
+    font-size: 18px;
+}
+
+.header_element {
+    width: 20%;
+    align-items: center;
+    justify-content: center;
+}
