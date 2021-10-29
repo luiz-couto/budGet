@@ -60,3 +60,21 @@
 .button_container {
     padding: 35px 20%;
 }
+
+.footer_box {
+    padding-top: 20px;
+    padding-right: 15px;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.footer_text_box {
+    padding: 0px 20px;
+}
+
+.footer_text {
+    color: $white;
+    text-decoration: underline;
+    font-family: 'Ruda';
+    font-size: 15px;
+}

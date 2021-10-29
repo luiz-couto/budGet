@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import { View, Text, Image, Keyboard } from 'react-native'
 import Icon from 'react-native-vector-icons/Feather';
+import { Divider } from 'native-base';
 
 import RoundInput from '../../components/RoundInput';
 import RoundButton from '../../components/RoundButton';
@@ -69,7 +70,16 @@ const Login = () => {
 						onClick={() => { console.log('login button clicked') }}
 					/>
 				</View>
-
+				
+				<View style={styles.footer_box}>
+					<View style={styles.footer_text_box}>
+						<Text style={styles.footer_text}>Forgot Password</Text>
+					</View>
+					<Divider orientation={'vertical'}/>
+					<View style={styles.footer_text_box}>
+						<Text style={styles.footer_text}>Register</Text>
+					</View>
+				</View>
 
 			</View>
 		</View>
