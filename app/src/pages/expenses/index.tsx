@@ -2,12 +2,17 @@ import React from 'react'
 import {
   View
 } from 'react-native'
-import Icon from 'react-native-vector-icons/Feather';
+import Icon from 'react-native-vector-icons/Feather'
+import { createMaterialTopTabNavigator } from '@react-navigation/material-top-tabs'
 
 import Header from '../../components/Header'
 import PressableOpacity from '../../components/PressableOpacity'
+import Uncategorized from './uncategorized'
+import Categorized from './categorized'
 
 import styles from './styles.scss'
+
+const Tab = createMaterialTopTabNavigator()
 
 const Expenses = () => {
   return (
@@ -29,6 +34,12 @@ const Expenses = () => {
           </PressableOpacity>
         }
       />
+      <View style={styles.tab_bar_box}>
+        <Tab.Navigator>
+          <Tab.Screen name="Uncategorized" component={Uncategorized} />
+          <Tab.Screen name="Categorized" component={Categorized} />
+        </Tab.Navigator>
+      </View>
     </View>
   );
 }
