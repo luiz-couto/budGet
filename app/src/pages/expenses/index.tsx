@@ -35,7 +35,15 @@ const Expenses = () => {
         }
       />
       <View style={styles.tab_bar_box}>
-        <Tab.Navigator>
+        <Tab.Navigator 
+          screenOptions={{
+            tabBarLabelStyle: styles.tab_bar_label,
+            tabBarItemStyle: styles.tab_bar_item,
+            tabBarStyle: { ...styles.tab_bar, elevation: 0 },
+            tabBarIndicatorStyle: styles.tab_bar_indicator
+
+          }}
+        >
           <Tab.Screen name="Uncategorized" component={Uncategorized} />
           <Tab.Screen name="Categorized" component={Categorized} />
         </Tab.Navigator>

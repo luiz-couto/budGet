@@ -13,3 +13,21 @@
 .tab_bar_box {
     height: 100%;
 }
+
+.tab_bar {
+    //border: 2px solid green;
+}
+
+.tab_bar_label {
+    font-family: 'Ruda';
+    text-transform: capitalize;
+}
+
+.tab_bar_item {
+    width: 130px;
+    //border: 2px solid;
+}
+
+.tab_bar_indicator {
+    background-color: $primary_color;
+}
