@@ -5,6 +5,7 @@ import {
 } from 'react-native'
 
 import { NativeBaseProvider } from 'native-base'
+import { NavigationContainer } from '@react-navigation/native'
 
 import AppStyles from './App.scss'
 
@@ -21,11 +22,13 @@ LogBox.ignoreLogs([
 
 const App = () => {
 	return (
-		<NativeBaseProvider>
-			<View>
-				<Expenses />
-			</View>
-	  </NativeBaseProvider>
+		<NavigationContainer>
+			<NativeBaseProvider>
+				<View>
+					<Expenses />
+				</View>
+			</NativeBaseProvider>
+		</NavigationContainer>
 	);
 }
 
