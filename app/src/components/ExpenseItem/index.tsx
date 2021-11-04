@@ -21,7 +21,7 @@ const ExpenseItem = (props: propsType) => {
         <View style={styles.icon_box}>
           {
             expense.category ? 
-            <MaterialIcon style={styles.circle_icon} name={"circle"} size={25} />
+            <MaterialIcon style={{ ...styles.circle_icon, color: expense.category.color }} name={"circle"} size={25} />
             :
             <FeatherIcon style={styles.help_icon} name={"help-circle"} size={25} />
           }
@@ -31,7 +31,7 @@ const ExpenseItem = (props: propsType) => {
           <Text style={styles.name_text}>{expense.name}</Text>
           {
             expense.category &&
-            <Text style={styles.category_text}>{expense.category}</Text>
+            <Text style={styles.category_text}>{expense.category.name}</Text>
           }
         </View>
       </View>

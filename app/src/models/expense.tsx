@@ -1,6 +1,8 @@
+import { Category } from '../models/category'
+
 export interface Expense {
   name: string
-  category: string | undefined
+  category: Category | undefined
   value: number
   date: Date
   ignore: boolean
