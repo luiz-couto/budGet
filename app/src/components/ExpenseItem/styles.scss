@@ -1,0 +1,50 @@
+@import '../../styles/global';
+
+.container {
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 12px;
+    padding-left: 20px;
+}
+
+.left_box {
+    flex-direction: row;
+}
+
+.icon_box {
+    justify-content: center;
+}
+
+.text_box {
+    justify-content: center;
+    padding-left: 10px;
+}
+
+.name_text {
+    font-family: 'Ruda';
+    color: $font_black;
+    font-size: 15px;
+    text-transform: capitalize;
+}
+
+.category_text {
+    font-family: 'Ruda';
+    color: $font_placeholder;
+    text-transform: capitalize;
+}
+
+.right_box {
+    flex-direction: row;
+    align-items: center;
+}
+
+.text_value {
+    font-family: 'Ruda';
+    font-size: 16px;
+    color: $red_error;
+    padding-right: 7px;
+}
+
+.arrow_icon {
+    color: $secondary_color;
+}

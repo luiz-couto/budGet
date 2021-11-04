@@ -1,4 +1,4 @@
-import { Expense } from '../../src/models/expense'
+import { Expense } from '../src/models/expense'
 
 const ExpenseListExample: Expense[] = [
   {

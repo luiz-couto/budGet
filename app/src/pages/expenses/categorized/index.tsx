@@ -5,11 +5,13 @@ import {
 } from 'react-native'
 
 import styles from './styles.scss'
+import ExpenseItem from '../../../components/ExpenseItem'
+import ExpenseEx from '../../../../fixtures/expense'
 
 const Categorized = () => {
   return (
     <View style={styles.container}>
-      <Text>Hello World!</Text>
+      <ExpenseItem expense={ExpenseEx}/>
     </View>
   );
 }

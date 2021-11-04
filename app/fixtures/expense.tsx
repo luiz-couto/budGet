@@ -1,4 +1,4 @@
-import { Expense } from '../../src/models/expense'
+import { Expense } from '../src/models/expense'
 
 const ExpenseExample: Expense = {
   name: "Ifood",
