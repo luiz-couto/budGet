@@ -1,26 +1,33 @@
 import { Expense } from '../src/models/expense'
-import CategoryEx from './category'
+import CategoryList from './categorylist'
 
 const ExpenseListExample: Expense[] = [
   {
     name: "Delivery Brand",
-    category: CategoryEx,
+    category: CategoryList[0],
     value: 32.64,
-    date: new Date("03/11/2021"),
+    date: new Date("03/10/2021"),
     ignore: false
   },
   {
     name: "Travel Brand",
-    category: undefined,
+    category: CategoryList[1],
     value: 48.05,
-    date: new Date("03/11/2021"),
+    date: new Date("30/09/2021"),
     ignore: false
   },
   {
     name: "Cloth Brand",
-    category: undefined,
+    category: CategoryList[2],
     value: 16.99,
-    date: new Date("03/11/2021"),
+    date: new Date("29/09/2021"),
+    ignore: false
+  },
+  {
+    name: "Streaming Brand",
+    category: CategoryList[3],
+    value: 16.99,
+    date: new Date("28/09/2021"),
     ignore: false
   }
 ]
