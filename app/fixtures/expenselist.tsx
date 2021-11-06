@@ -20,7 +20,7 @@ const ExpenseListExample: Expense[] = [
     name: "Cloth Brand",
     category: CategoryList[2],
     value: 16.99,
-    date: new Date("29/09/2021"),
+    date: new Date("30/09/2021"),
     ignore: false
   },
   {
