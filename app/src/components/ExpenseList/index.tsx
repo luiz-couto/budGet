@@ -26,7 +26,7 @@ interface DailyData {
 
 interface MonthlyData {
   title: string
-  data: DailyData[]
+  data: DailyData[][]
 }
 
 const getFilteredExpenseList = (expenseList: Expense[]) => {
@@ -44,21 +44,21 @@ const getFilteredExpenseList = (expenseList: Expense[]) => {
       data: []
     }
 
+    let dailyArr: DailyData[] = []
     for(let day=FIRST_DAY; day<=LAST_DAY; day++) {
-      
       let dailyExpenses = monthlyExpenses.filter((expense) => {
         return day == expense.date.getDate()
       })
 
       if(dailyExpenses.length == 0) continue
 
-      monthlyData.data.push({
+      dailyArr.push({
         title: day.toString(),
         data: dailyExpenses
       })
 
     }
-
+    monthlyData.data.push(dailyArr)
     expenses.push(monthlyData)
   }
 
@@ -67,7 +67,6 @@ const getFilteredExpenseList = (expenseList: Expense[]) => {
 
 const ExpenseList = (props: propsType) => {
   const filteredExpenses = getFilteredExpenseList(props.expenses)
-  console.log(filteredExpenses)
   return (
     <View style={styles.list_container}>
       <SectionList
@@ -76,9 +75,9 @@ const ExpenseList = (props: propsType) => {
         renderSectionHeader={({ section }) => (
           <Text>{section.title}</Text>
         )}
-        renderItem={({ section }) => (
+        renderItem={({ item }) => (
           <SectionList
-            sections={section.data}
+            sections={item}
             renderSectionHeader={({ section }) => (
               <Text>{section.title}</Text>
             )}
