@@ -1,8 +1,13 @@
 import React from 'react'
 import {
-  View
+  View,
+  Text,
+  SectionList
 } from 'react-native'
 import { Expense } from '../../models/expense'
+import ExpenseItem from '../ExpenseItem'
+
+import styles from './styles.scss'
 
 const FIRST_MONTH = 1
 const LAST_MONTH = 12
@@ -40,6 +45,7 @@ const getFilteredExpenseList = (expenseList: Expense[]) => {
     }
 
     for(let day=FIRST_DAY; day<=LAST_DAY; day++) {
+      
       let dailyExpenses = monthlyExpenses.filter((expense) => {
         return day == expense.date.getDate()
       })
@@ -61,9 +67,27 @@ const getFilteredExpenseList = (expenseList: Expense[]) => {
 
 const ExpenseList = (props: propsType) => {
   const filteredExpenses = getFilteredExpenseList(props.expenses)
+  console.log(filteredExpenses)
   return (
-    <View>
-      
+    <View style={styles.list_container}>
+      <SectionList
+        sections={filteredExpenses}
+        stickySectionHeadersEnabled={true}
+        renderSectionHeader={({ section }) => (
+          <Text>{section.title}</Text>
+        )}
+        renderItem={({ section }) => (
+          <SectionList
+            sections={section.data}
+            renderSectionHeader={({ section }) => (
+              <Text>{section.title}</Text>
+            )}
+            renderItem={({ item }) => (
+              <ExpenseItem expense={item}/>
+            )}
+          />
+        )}
+      />
     </View>
   );
 }
