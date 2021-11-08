@@ -1,15 +1,18 @@
 import React from 'react'
 import {
-  View,
-  Text
+  View
 } from 'react-native'
 
 import styles from './styles.scss'
+import ExpenseList from '../../../components/ExpenseList'
+import ExpenseListExample from '../../../../fixtures/expenselist'
 
 const Uncategorized = () => {
+  const expenses = ExpenseListExample.filter((expense) => expense.category == undefined)
+
   return (
     <View style={styles.container}>
-      <Text>Hello World!!!</Text>
+      <ExpenseList expenses={expenses}/>
     </View>
   );
 }

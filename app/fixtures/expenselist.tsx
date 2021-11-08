@@ -68,7 +68,7 @@ const ExpenseListExample: Expense[] = [
   },
   {
     name: "Delivery Brand",
-    category: CategoryList[0],
+    category: undefined,
     value: 32.64,
     date: new Date("08/28/2021"),
     ignore: false
@@ -91,41 +91,41 @@ const ExpenseListExample: Expense[] = [
     name: "Delivery Brand",
     category: CategoryList[0],
     value: 32.64,
-    date: new Date("08/28/2021"),
+    date: new Date("08/27/2021"),
     ignore: false
   },
   {
     name: "Cloth Brand",
-    category: CategoryList[2],
+    category: undefined,
     value: 16.99,
-    date: new Date("08/28/2021"),
+    date: new Date("08/27/2021"),
     ignore: false
   },
   {
     name: "Streaming Brand",
     category: CategoryList[3],
     value: 16.99,
-    date: new Date("08/28/2021"),
+    date: new Date("08/27/2021"),
     ignore: false
   },{
     name: "Delivery Brand",
-    category: CategoryList[0],
+    category: undefined,
     value: 32.64,
-    date: new Date("08/28/2021"),
+    date: new Date("08/26/2021"),
     ignore: false
   },
   {
     name: "Cloth Brand",
     category: CategoryList[2],
     value: 16.99,
-    date: new Date("08/28/2021"),
+    date: new Date("08/24/2021"),
     ignore: false
   },
   {
     name: "Final Brand",
     category: CategoryList[3],
     value: 16.99,
-    date: new Date("08/28/2021"),
+    date: new Date("08/24/2021"),
     ignore: false
   },
 ]

@@ -1,7 +1,6 @@
 import React from 'react'
 import {
-  View,
-  Text
+  View
 } from 'react-native'
 
 import styles from './styles.scss'
@@ -9,9 +8,11 @@ import ExpenseList from '../../../components/ExpenseList'
 import ExpenseListExample from '../../../../fixtures/expenselist'
 
 const Categorized = () => {
+  const expenses = ExpenseListExample.filter((expense) => expense.category)
+  
   return (
     <View style={styles.container}>
-      <ExpenseList expenses={ExpenseListExample}/>
+      <ExpenseList expenses={expenses}/>
     </View>
   );
 }
