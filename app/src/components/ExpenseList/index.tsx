@@ -35,7 +35,7 @@ interface MonthlyData {
 const getFilteredExpenseList = (expenseList: Expense[]) => {
   let expenses: MonthlyData[] = []
 
-  for(let month=FIRST_MONTH; month<=LAST_MONTH; month++) {
+  for(let month=LAST_MONTH; month>=FIRST_MONTH; month--) {
     let monthlyExpenses = expenseList.filter((expense) => {
       return month == expense.date.getMonth() + 1
     })
@@ -48,7 +48,7 @@ const getFilteredExpenseList = (expenseList: Expense[]) => {
     }
 
     let dailyArr: DailyData[] = []
-    for(let day=FIRST_DAY; day<=LAST_DAY; day++) {
+    for(let day=LAST_DAY; day>=FIRST_DAY; day--) {
       let dailyExpenses = monthlyExpenses.filter((expense) => {
         return day == expense.date.getDate()
       })
