@@ -3,8 +3,7 @@
 .container {
     flex-direction: row;
     justify-content: space-between;
-    padding: 12px;
-    padding-left: 20px;
+    background-color: $white;
 }
 
 .left_box {
@@ -13,6 +12,7 @@
 
 .icon_box {
     justify-content: center;
+    padding: 10px 0px;
 }
 
 .help_icon {

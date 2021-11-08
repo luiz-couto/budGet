@@ -80,7 +80,9 @@ const ExpenseList = (props: propsType) => {
   const filteredExpenses = getFilteredExpenseList(props.expenses)
   return (
     <View style={styles.list_container}>
+      <View style={styles.timeline}></View>
       <SectionList
+        style={styles.section_list}
         sections={filteredExpenses}
         stickySectionHeadersEnabled={true}
         renderSectionHeader={({ section }) => (
@@ -98,7 +100,9 @@ const ExpenseList = (props: propsType) => {
               </View>
             )}
             renderItem={({ item }) => (
-              <ExpenseItem expense={item}/>
+              <View style={styles.expense_box}>
+                <ExpenseItem expense={item}/>
+              </View>
             )}
           />
         )}
