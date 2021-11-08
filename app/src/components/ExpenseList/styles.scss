@@ -3,3 +3,30 @@
 .list_container {
     flex: 1;
 }
+
+.month_header_box {
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 15px;
+    background-color: $white;
+}
+
+.month_name {
+    font-family: 'Ruda';
+    font-size: 17px;
+    text-transform: capitalize;
+}
+
+.coin_sign_text {
+    font-family: 'Ruda';
+    font-size: 17px;
+}
+
+.weekday_header_box {
+    padding: 5px;
+    align-items: center;
+}
+
+.weekday_text {
+    font-family: 'Ruda';
+}

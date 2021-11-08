@@ -16,6 +16,8 @@ const LAST_MONTH = 12
 const FIRST_DAY = 1
 const LAST_DAY = 31
 
+const LANGUAGE: Language = 'english'
+
 interface propsType {
   expenses: Expense[]
 }
@@ -41,7 +43,7 @@ const getFilteredExpenseList = (expenseList: Expense[]) => {
     if(monthlyExpenses.length == 0) continue
 
     let monthlyData: MonthlyData = {
-      title: getMonthName(month, 'portuguese_brazil'),
+      title: getMonthName(month-1),
       data: []
     }
 
@@ -54,7 +56,7 @@ const getFilteredExpenseList = (expenseList: Expense[]) => {
       if(dailyExpenses.length == 0) continue
 
       dailyArr.push({
-        title: day.toString(),
+        title: `${day} ${getWeekdayName(dailyExpenses[0].date.getDay())}`,
         data: dailyExpenses
       })
 
@@ -66,8 +68,12 @@ const getFilteredExpenseList = (expenseList: Expense[]) => {
   return expenses
 }
 
-const getMonthName = (monthNum: number, language:Language) => {
-  return DateC[language].months[monthNum]
+const getMonthName = (monthNum: number) => {
+  return DateC[LANGUAGE].months[monthNum]
+}
+
+const getWeekdayName = (weekdayNum: number) => {
+  return DateC[LANGUAGE].weekdays[weekdayNum]
 }
 
 const ExpenseList = (props: propsType) => {
@@ -78,13 +84,18 @@ const ExpenseList = (props: propsType) => {
         sections={filteredExpenses}
         stickySectionHeadersEnabled={true}
         renderSectionHeader={({ section }) => (
-          <Text>{section.title}</Text>
+          <View style={styles.month_header_box}>
+            <Text style={styles.month_name}>{section.title}</Text>
+            <Text style={styles.coin_sign_text}>R$</Text>
+          </View>
         )}
         renderItem={({ item }) => (
           <SectionList
             sections={item}
             renderSectionHeader={({ section }) => (
-              <Text>{section.title}</Text>
+              <View style={styles.weekday_header_box}>
+                <Text style={styles.weekday_text}>{section.title}</Text>
+              </View>
             )}
             renderItem={({ item }) => (
               <ExpenseItem expense={item}/>
