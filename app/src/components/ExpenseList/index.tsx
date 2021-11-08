@@ -6,6 +6,7 @@ import {
 } from 'react-native'
 import { Expense } from '../../models/expense'
 import ExpenseItem from '../ExpenseItem'
+import { Language, DateC } from '../../../constants/date'
 
 import styles from './styles.scss'
 
@@ -40,7 +41,7 @@ const getFilteredExpenseList = (expenseList: Expense[]) => {
     if(monthlyExpenses.length == 0) continue
 
     let monthlyData: MonthlyData = {
-      title: month.toString(),
+      title: getMonthName(month, 'portuguese_brazil'),
       data: []
     }
 
@@ -63,6 +64,10 @@ const getFilteredExpenseList = (expenseList: Expense[]) => {
   }
 
   return expenses
+}
+
+const getMonthName = (monthNum: number, language:Language) => {
+  return DateC[language].months[monthNum]
 }
 
 const ExpenseList = (props: propsType) => {
