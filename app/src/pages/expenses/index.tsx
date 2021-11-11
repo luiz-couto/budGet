@@ -54,6 +54,7 @@ const Expenses = () => {
           </PressableOpacity>
         }
       />
+
       <View style={styles.tab_bar_box}>
         <Tab.Navigator 
           screenOptions={{
@@ -70,10 +71,10 @@ const Expenses = () => {
       </View>
 
       <View style={styles.button_box}>
-        <RoundButton 
+        <RoundButton
           text={'+ Expense'}
           onClick={() => console.log('add expense clicked')}
-        > 
+        >
           <View style={styles.inner_button_box}>
             <Icon style={styles.icon_plus} name={"plus"} size={25} />
             <Text style={styles.expense_text}>Expense</Text>

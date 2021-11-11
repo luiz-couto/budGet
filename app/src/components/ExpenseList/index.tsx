@@ -80,7 +80,6 @@ const ExpenseList = (props: propsType) => {
   const filteredExpenses = getFilteredExpenseList(props.expenses)
   return (
     <View style={styles.list_container}>
-      <View style={styles.timeline}></View>
       <SectionList
         style={styles.section_list}
         sections={filteredExpenses}
@@ -91,6 +90,8 @@ const ExpenseList = (props: propsType) => {
             <Text style={styles.coin_sign_text}>R$</Text>
           </View>
         )}
+        ListFooterComponent={<View style={styles.list_footer}/>}
+        ListHeaderComponent={<View style={styles.timeline}/>}
         renderItem={({ item }) => (
           <SectionList
             sections={item}
