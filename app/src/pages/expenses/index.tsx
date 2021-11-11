@@ -60,7 +60,7 @@ const Expenses = () => {
           screenOptions={{
             tabBarLabelStyle: styles.tab_bar_label,
             tabBarItemStyle: styles.tab_bar_item,
-            tabBarStyle: { ...styles.tab_bar, elevation: 0 },
+            tabBarStyle: styles.tab_bar,
             tabBarIndicatorStyle: styles.tab_bar_indicator
 
           }}
