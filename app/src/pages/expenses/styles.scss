@@ -27,6 +27,11 @@
     background-color: $primary_color;
 }
 
+.list_container {
+    background-color: $white;
+    flex: 1;
+}
+
 .button_box {
     position: absolute;
     bottom: 20px;

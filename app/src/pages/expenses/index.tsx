@@ -7,13 +7,31 @@ import { createMaterialTopTabNavigator } from '@react-navigation/material-top-ta
 
 import Header from '../../components/Header'
 import PressableOpacity from '../../components/PressableOpacity'
-import Uncategorized from './uncategorized'
-import Categorized from './categorized'
+import ExpenseList from '../../components/ExpenseList'
 import RoundButton from '../../components/RoundButton'
+import ExpenseListExample from '../../../fixtures/expenselist'
 
 import styles from './styles.scss'
 
 const Tab = createMaterialTopTabNavigator()
+
+const Uncategorized = () => {
+  const expenses = ExpenseListExample.filter((expense) => expense.category == undefined)
+  return (
+    <View style={styles.list_container}>
+      <ExpenseList expenses={expenses}/>
+    </View>
+  );
+}
+
+const Categorized = () => {
+  const expenses = ExpenseListExample.filter((expense) => expense.category)
+  return (
+    <View style={styles.list_container}>
+      <ExpenseList expenses={expenses}/>
+    </View>
+  );
+}
 
 const Expenses = () => {
   return (
