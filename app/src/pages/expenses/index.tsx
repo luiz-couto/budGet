@@ -9,6 +9,7 @@ import Header from '../../components/Header'
 import PressableOpacity from '../../components/PressableOpacity'
 import Uncategorized from './uncategorized'
 import Categorized from './categorized'
+import RoundButton from '../../components/RoundButton'
 
 import styles from './styles.scss'
 
@@ -48,6 +49,14 @@ const Expenses = () => {
           <Tab.Screen name="Categorized" component={Categorized} />
         </Tab.Navigator>
       </View>
+
+      <View style={styles.button_box}>
+        <RoundButton 
+          text={'+ Expense'}
+          onClick={() => console.log('add expense clicked')}
+        />
+      </View>
+
     </View>
   );
 }
