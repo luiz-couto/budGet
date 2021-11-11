@@ -1,6 +1,7 @@
 import React from 'react'
 import {
-  View
+  View,
+  Text
 } from 'react-native'
 import Icon from 'react-native-vector-icons/Feather'
 import { createMaterialTopTabNavigator } from '@react-navigation/material-top-tabs'
@@ -72,7 +73,12 @@ const Expenses = () => {
         <RoundButton 
           text={'+ Expense'}
           onClick={() => console.log('add expense clicked')}
-        />
+        > 
+          <View style={styles.inner_button_box}>
+            <Icon style={styles.icon_plus} name={"plus"} size={25} />
+            <Text style={styles.expense_text}>Expense</Text>
+          </View>
+        </RoundButton>
       </View>
 
     </View>

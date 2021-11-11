@@ -38,3 +38,22 @@
     width: 100%;
     padding: 0% 25%;
 }
+
+.inner_button_box {
+    justify-content: center;
+    flex-direction: row;
+    align-items: center;
+    width: 100%;
+}
+
+.icon_plus {
+    color: $white;
+    padding-right: 5px;
+}
+
+.expense_text {
+    font-size: 20px;
+    font-family: 'Ruda';
+    color: $white;
+    padding-left: 5px;
+}

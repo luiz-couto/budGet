@@ -10,6 +10,7 @@ import PressableOpacity from '../PressableOpacity';
 
 interface propsType {
   text: string
+  children?: JSX.Element
   onClick: () => void
 }
 
@@ -19,7 +20,10 @@ const RoundButton = (props: propsType) => {
       onClick={props.onClick}
     >
       <View style={{ ...styles.button_box, elevation: 7 }}>
-        <Text style={styles.button_text}>{props.text}</Text>
+        {
+          props.children ||
+          <Text style={styles.button_text}>{props.text}</Text>
+        }
       </View>
     </PressableOpacity>
   );
