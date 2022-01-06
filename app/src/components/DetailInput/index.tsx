@@ -7,10 +7,11 @@ import {
 import styles from './styles.scss';
 
 interface propsType {
-  text: string
-  textInputStyle?: Object
+  value: string
   placeholder: string
   icon: JSX.Element
+  editable?: boolean
+  textInputStyle?: Object
   rightElement?: JSX.Element
   outerBoxStyle?: Object
 }
@@ -23,6 +24,8 @@ const DetailInput = (props: propsType) => {
       </View>
       <View style={styles.right_box}>
         <TextInput
+          value={props.value}
+          editable={props.editable}
           style={{...styles.text_input, ...props.textInputStyle }}
           placeholder={props.placeholder}
         />
