@@ -4,10 +4,19 @@ import {
   Text
 } from 'react-native'
 
+import Icon from 'react-native-vector-icons/Feather';
+import DetailInput from '../../components/DetailInput';
+
+import styles from './styles.scss';
+
 const ExpenseDetails = () => {
   return (
     <View>
-      <Text>Hello World</Text>
+      <DetailInput
+        icon={<Icon name={"menu"} size={25} style={styles.name_icon} />}
+        text={"My expense"}
+        placeholder={"Expense name"}
+      />
     </View>
   );
 }
