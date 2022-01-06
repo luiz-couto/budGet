@@ -26,6 +26,13 @@ const ExpenseDetails = () => {
             <FeatherIcon style={styles.icon_left} name={"chevron-left"} size={35} />
           </PressableOpacity>
         }
+        rightElement={
+          <PressableOpacity
+            onClick={() => console.log('edit button clicked')}
+          >
+            <Icon style={styles.default_icon} name={"mode-edit"} size={27} />
+          </PressableOpacity>
+        }
       />
       <View style={styles.form_box}>
         <DetailInput
