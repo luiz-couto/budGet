@@ -14,6 +14,7 @@ interface propsType {
   textInputStyle?: Object
   rightElement?: JSX.Element
   outerBoxStyle?: Object
+  hookChange?: React.Dispatch<React.SetStateAction<any>>
 }
 
 const DetailInput = (props: propsType) => {
@@ -24,6 +25,7 @@ const DetailInput = (props: propsType) => {
       </View>
       <View style={styles.right_box}>
         <TextInput
+          onChangeText={props.hookChange}
           value={props.value}
           editable={props.editable}
           style={{...styles.text_input, ...props.textInputStyle }}

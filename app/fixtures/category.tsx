@@ -1,7 +1,7 @@
 import { Category } from '../src/models/category'
 
 const CategoryExample: Category = {
-  name: "food",
+  name: "Food",
   color: "#F4776B"
 }
 

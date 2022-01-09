@@ -17,7 +17,11 @@ import styles from './styles.scss';
 import ExpenseExample from '../../../fixtures/expense';
 
 const ExpenseDetails = () => {
-  const [editMode, setEditMode] = useState(false)
+  const [editMode, setEditMode] = useState(false);
+  const [name, setName] = useState(ExpenseExample.name);
+  const [category, setCategory] = useState(ExpenseExample.category);
+  const [value, setValue] = useState(ExpenseExample.value);
+  const [date, setDate] = useState(ExpenseExample.date);
 
   return (
     <View>
@@ -43,24 +47,30 @@ const ExpenseDetails = () => {
       <View style={styles.form_box}>
         <DetailInput
           icon={<Icon name={"notes"} size={25} style={styles.default_icon} />}
-          value={"My expense"}
+          value={name}
+          hookChange={setName}
           placeholder={"Expense name"}
+          editable={editMode}
         />
         <DetailInput
           icon={<Icon name={"help-outline"} size={25} style={styles.default_icon} />}
-          value={""}
+          value={category?.name || ""}
           placeholder={"Category"}
+          editable={editMode}
         />
         <DetailInput
           icon={<Icon name={"attach-money"} size={25} style={styles.default_icon} />}
-          value={""}
+          value={value.toString()}
+          hookChange={setValue}
           placeholder={"Value"}
           textInputStyle={styles.colored_text}
+          editable={editMode}
         />
         <DetailInput
           icon={<Icon name={"insert-invitation"} size={25} style={styles.default_icon} />}
-          value={""}
+          value={date.toDateString()}
           placeholder={"Date"}
+          editable={editMode}
         />
         <DetailInput
           icon={<Icon name={"remove-red-eye"} size={25} style={styles.eye_icon} />}
