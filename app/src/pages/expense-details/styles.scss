@@ -24,3 +24,20 @@
 .form_box {
     padding-top: 15px;
 }
+
+.right_icons_box {
+    flex-direction: row;
+    align-items: center;
+    flex: 1;
+    width: 100%;
+    justify-content: space-between;
+    padding-right: 10px;
+}
+
+.icon_clear {
+    color: $red_error;
+}
+
+.icon_done {
+    color: $green_success;
+}
